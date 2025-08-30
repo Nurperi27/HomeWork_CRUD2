@@ -27,11 +27,12 @@ public class Main {
                     while(true){
                         try {
                             System.out.println("Enter id: ");
-                            snickers.setId(Long.parseLong(scInt.nextLine()));
-                            if (snickers.getId() < 1) {
+                            //snickers.setId(Long.parseLong(sc.nextLine()));
+                            long id = Long.parseLong(scStr.nextLine());
+                            if (id < 1) {
                                 throw new RuntimeException("Id less than 1. Try again!");
                             }
-                            snickers.setId(scInt.nextLong());
+                            snickers.setId(id);
                             break; //выход из цикла после правильного ввода id
                         } catch (NumberFormatException e) {
                             System.err.println("You didn't enter a number!");
@@ -44,7 +45,7 @@ public class Main {
                     System.out.println("Enter weight: ");
                     snickers.setWeight(scInt.nextDouble());
                     System.out.println("Enter barcode: ");
-                    snickers.setBarcode(scStr.nextLine());
+                    snickers.setBarcode(new Scanner(System.in).nextLine());
                     System.out.println("Enter price: ");
                     snickers.setPrice(scInt.nextInt());
                     System.out.println("Enter product quantity: ");
